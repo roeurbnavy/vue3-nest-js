@@ -3,7 +3,7 @@ How to run
 ## Backend
 
 ```bash
- cd backend
+cd backend
 
 # Run
 npm run start:dev
