@@ -98,10 +98,7 @@ const getTodoList = () => {
 
   axios({
     method: "GET",
-    url: `http://127.0.0.1:8080/todo/findByUser/${currentUser.value._id}`,
-    // params: {
-    //   id: currentUser.value._id,
-    // },
+    url: `http://127.0.0.1:8080/todo/findByUser`,
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Content-type": "application/json",
@@ -138,7 +135,6 @@ const addTodo = () => {
         url: "http://127.0.0.1:8080/todo/create",
         data: {
           title: form.value.task,
-          userId: currentUser.value._id,
         },
         headers: {
           "Access-Control-Allow-Origin": "*",
