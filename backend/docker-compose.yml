@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:14
+    restart: always
+    container_name: chom_nay_backend
+    environment:
+      - POSTGRES_DB=nest
+      - POSTGRES_USER=nest
+      - POSTGRES_PASSWORD=nest
+    ports:
+      - 5432:5432
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+volumes:
+  postgresdata:
