@@ -12,6 +12,8 @@ import { TodoService } from './todo.service'
 import { CreateTodoDto } from './dto/create-todo.dto'
 import { UpdateTodoDto } from './dto/update-todo.dto'
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger'
+import { CurrentUser } from '@/common/decorator/currentUser.decorator'
+import { clone } from 'lodash'
 
 @ApiTags('Todo')
 @Controller('todo')
@@ -20,8 +22,10 @@ export class TodoController {
 
   @ApiBearerAuth()
   @Post('create')
-  create(@Body() createTodoDto: CreateTodoDto) {
-    return this.todoService.create(createTodoDto)
+  create(@Body() createTodoDto: CreateTodoDto, @CurrentUser() user: any) {
+    const doc = clone(createTodoDto)
+    doc.userId = user._id
+    return this.todoService.create(doc)
   }
 
   @ApiBearerAuth()
@@ -31,9 +35,9 @@ export class TodoController {
   }
 
   @ApiBearerAuth()
-  @Get('findByUser/:id')
-  findByUser(@Param('id') id: string) {
-    return this.todoService.findByUser(id)
+  @Get('findByUser')
+  findByUser(@CurrentUser() user: any) {
+    return this.todoService.findByUser(user._id)
   }
 
   @ApiBearerAuth()
