@@ -47,6 +47,7 @@ export class TodoController {
   update(@Param('id') id: string, @Body() updateTodoDto: UpdateTodoDto) {
     return this.todoService.update(id, updateTodoDto)
   }
+
   @ApiBearerAuth()
   @Delete('deleteById')
   deleteById(@Query('id') id: string) {

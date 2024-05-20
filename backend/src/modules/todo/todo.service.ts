@@ -45,14 +45,14 @@ export class TodoService {
       // des: updateTodoDto.des,
       status: res?.status,
       statusDate: {
-        todo: new Date()
+        todo: new Date(),
         // updateTodoDto.date,
       },
     }
     return await this.todoModel.updateOne({ _id: id }, { $set: doc })
   }
 
-  async remove(id: string) {
-    return await this.todoModel.deleteOne({ _id: id })
+  remove(id: string): Promise<any> {
+    return this.todoModel.deleteOne({ _id: id })
   }
 }
