@@ -5,14 +5,10 @@ import { JwtAuthGuard } from './core/auth/jwt-auth.guard'
 import { Module } from '@nestjs/common'
 import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core'
 import { ConfigModule } from '@nestjs/config'
-import { CoreModule } from './core'
 import { MongooseModule } from '@nestjs/mongoose'
 import { AppController } from './app.controller'
 import { mongoAsyncConfig } from './config/mongo.config'
-import { TodoModule } from './modules/todo/todo.module'
 import { CustomersModule } from './modules/customers/customers.module'
-import { AuthModule } from './core/auth/auth.module'
-import { UsersModule } from './core/users/users.module'
 
 // const envFilePath: string = getEnvPath(`${__dirname}/common/envs`);
 // ignoreEnvFile: process.env.NODE_ENV === 'production',
@@ -32,11 +28,11 @@ import { UsersModule } from './core/users/users.module'
         connectionName: 'pos',
       }
     ),
-    AuthModule,
+    // AuthModule,
     // UsersModule,
     // CoreModule,
     // TodoModule,
-    // CustomersModule,
+    CustomersModule,
   ],
   controllers: [AppController],
   providers: [
