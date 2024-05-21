@@ -14,7 +14,7 @@ export class AuthService {
   ) { }
 
   async createToken(user: any) {
-    const EXPIRES = this.config.get<string>('JWT_EXPIRES')
+    const EXPIRES = this.config.get<string>('JWT_EXPIRES') ?? '30 days'
     const payload = {
       expiresIn: `${EXPIRES}`,
       accessToken: this.jwtService.sign({ id: user._id }),
