@@ -23,9 +23,9 @@ import { CustomersModule } from './modules/customers/customers.module'
     }),
     MongooseModule.forRootAsync(mongoAsyncConfig),
     // connection to pos
-    MongooseModule.forRoot('mongodb://localhost:27017/leang_srun', {
-      connectionName: 'pos',
-    }),
+    // MongooseModule.forRoot('mongodb://localhost:27017/leang_srun', {
+    //   connectionName: 'pos',
+    // }),
     // CoreModule,
     // TodoModule,
     // CustomersModule,
