@@ -9,6 +9,7 @@ import { MongooseModule } from '@nestjs/mongoose'
 import { AppController } from './app.controller'
 import { CustomersModule } from './modules/customers/customers.module'
 import { TodoModule } from './modules/todo/todo.module'
+import { mongoAsyncConfig } from './config/mongo.config'
 
 // const envFilePath: string = getEnvPath(`${__dirname}/common/envs`);
 // ignoreEnvFile: process.env.NODE_ENV === 'production',
@@ -19,13 +20,13 @@ import { TodoModule } from './modules/todo/todo.module'
       // envFilePath,
       // isGlobal: true,
     }),
-    // MongooseModule.forRootAsync(mongoAsyncConfig),
-    MongooseModule.forRoot(
-      'mongodb+srv://root:AOiNIlgKQUBPGA41@pos-multi-company.mwod6ws.mongodb.net/nestDB?retryWrites=true&w=majority&appName=pos-multi-company',
-      {
-        connectionName: 'auth',
-      }
-    ),
+    MongooseModule.forRootAsync(mongoAsyncConfig),
+    // MongooseModule.forRoot(
+    //   'mongodb+srv://root:AOiNIlgKQUBPGA41@pos-multi-company.mwod6ws.mongodb.net/nestDB?retryWrites=true&w=majority&appName=pos-multi-company',
+    //   {
+    //     connectionName: 'auth',
+    //   }
+    // ),
     // connection to pos
     // mongodb://localhost:27017/leang_srun
     MongooseModule.forRoot(
@@ -37,7 +38,7 @@ import { TodoModule } from './modules/todo/todo.module'
     // AuthModule,
     // UsersModule,
     // CoreModule,
-    TodoModule,
+    // TodoModule,
     CustomersModule,
   ],
   controllers: [AppController],
