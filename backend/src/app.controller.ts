@@ -19,7 +19,7 @@ export class AppController {
   @Public()
   @Get()
   getHello(): string {
-    return 'Hello Worl'
+    return 'Hello World'
     // this.appSerive.getHello();
   }
 }
