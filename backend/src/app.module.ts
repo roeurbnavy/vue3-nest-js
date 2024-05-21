@@ -11,6 +11,8 @@ import { AppController } from './app.controller'
 import { mongoAsyncConfig } from './config/mongo.config'
 import { TodoModule } from './modules/todo/todo.module'
 import { CustomersModule } from './modules/customers/customers.module'
+import { UsersModule } from './core/users/users.module'
+import { AuthModule } from './core/auth/auth.module'
 
 // const envFilePath: string = getEnvPath(`${__dirname}/common/envs`);
 // ignoreEnvFile: process.env.NODE_ENV === 'production',
@@ -26,7 +28,9 @@ import { CustomersModule } from './modules/customers/customers.module'
     MongooseModule.forRoot('mongodb://localhost:27017/leang_srun', {
       connectionName: 'pos',
     }),
-    CoreModule,
+    // CoreModule,
+    UsersModule,
+    AuthModule,
     TodoModule,
     CustomersModule,
   ],
