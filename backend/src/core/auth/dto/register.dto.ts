@@ -1,19 +1,18 @@
-// import { AppRoles } from '@/common/enum/role.enum';
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger'
 
 export class RegisterDto {
   @ApiProperty()
-  readonly username: string;
+  readonly username: string
 
   @ApiProperty()
-  readonly name: string;
+  readonly name: string
 
   @ApiProperty()
-  readonly password: string;
+  readonly password: string
 
   @ApiProperty()
-  readonly passwordConfirmation: string;
+  readonly passwordConfirmation: string
 
   @ApiProperty()
-  readonly roles: string[];
+  readonly roles: string[]
 }

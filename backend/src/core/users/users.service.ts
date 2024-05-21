@@ -1,3 +1,4 @@
+import { Hash } from './../../util/Hash'
 import { UserUpdateDto } from './dto/update.dto'
 import {
   BadRequestException,
@@ -5,12 +6,11 @@ import {
   NotAcceptableException,
   UnauthorizedException,
 } from '@nestjs/common'
-import { RegisterDto } from '@/core/auth/dto/register.dto'
-import { Hash } from '@/util/Hash'
-import { ChangePasswordDto } from '@/core/auth/dto/changePassword.dto'
 import { InjectModel } from '@nestjs/mongoose'
 import { User } from './schema/user.schama'
 import { Model } from 'mongoose'
+import { RegisterDto } from '../auth/dto/register.dto'
+import { ChangePasswordDto } from '../auth/dto/changePassword.dto'
 
 type UserType = any
 

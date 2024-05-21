@@ -5,7 +5,7 @@ import { AuthService } from './auth.service'
 
 import { Public } from 'src/common/decorator/public.decorator'
 import { ChangePasswordDto } from './dto/changePassword.dto'
-import { CurrentUser } from 'src/common/decorator/currentUser.decorator'
+import { CurrentUser } from '../../common/decorator/currentUser.decorator'
 import { Body, Controller, Get, Param, Post } from '@nestjs/common'
 import { User } from '../users/schema/user.schama'
 import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger'
