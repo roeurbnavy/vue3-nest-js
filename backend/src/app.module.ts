@@ -9,6 +9,7 @@ import { MongooseModule } from '@nestjs/mongoose'
 import { AppController } from './app.controller'
 import { mongoAsyncConfig } from './config/mongo.config'
 import { CustomersModule } from './modules/customers/customers.module'
+import { TodoModule } from './modules/todo/todo.module'
 
 // const envFilePath: string = getEnvPath(`${__dirname}/common/envs`);
 // ignoreEnvFile: process.env.NODE_ENV === 'production',
@@ -31,7 +32,7 @@ import { CustomersModule } from './modules/customers/customers.module'
     // AuthModule,
     // UsersModule,
     // CoreModule,
-    // TodoModule,
+    TodoModule,
     CustomersModule,
   ],
   controllers: [AppController],
