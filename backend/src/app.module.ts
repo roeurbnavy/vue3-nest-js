@@ -8,7 +8,6 @@ import { ConfigModule } from '@nestjs/config'
 import { MongooseModule } from '@nestjs/mongoose'
 import { AppController } from './app.controller'
 import { CustomersModule } from './modules/customers/customers.module'
-import { TodoModule } from './modules/todo/todo.module'
 import { mongoAsyncConfig } from './config/mongo.config'
 
 // const envFilePath: string = getEnvPath(`${__dirname}/common/envs`);
