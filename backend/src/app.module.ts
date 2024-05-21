@@ -27,8 +27,8 @@ import { CustomersModule } from './modules/customers/customers.module'
       connectionName: 'pos',
     }),
     CoreModule,
-    TodoModule,
-    CustomersModule,
+    // TodoModule,
+    // CustomersModule,
   ],
   controllers: [AppController],
   providers: [
