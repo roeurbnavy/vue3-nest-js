@@ -55,7 +55,6 @@ export class TodoController {
   @ApiBearerAuth()
   @Delete('deleteById')
   deleteById(@Query('id') id: string) {
-    console.log('id', id)
     return this.todoService.remove(id)
   }
 }
