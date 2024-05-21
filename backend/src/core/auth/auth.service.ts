@@ -14,14 +14,18 @@ export class AuthService {
   ) { }
 
   async createToken(user: any) {
-    const EXPIRES = this.config.get<string>('JWT_EXPIRES') ?? '30 days'
-    const payload = {
-      expiresIn: `${EXPIRES}`,
-      accessToken: this.jwtService.sign({ id: user._id }),
-      user,
+    try {
+      const EXPIRES = this.config.get<string>('JWT_EXPIRES') ?? '30 days'
+      console.log('user', user)
+      const payload = {
+        expiresIn: `${EXPIRES}`,
+        accessToken: this.jwtService.sign({ id: user._id }),
+        user,
+      }
+      return payload
+    } catch (error) {
+      console.log('error', error)
     }
-    console.log('payload', payload)
-    return payload
   }
 
   async validateUser(payload: LoginDto): Promise<any> {
