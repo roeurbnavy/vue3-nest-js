@@ -11,6 +11,7 @@ import { AppController } from './app.controller'
 import { mongoAsyncConfig } from './config/mongo.config'
 import { TodoModule } from './modules/todo/todo.module'
 import { CustomersModule } from './modules/customers/customers.module'
+import { AuthModule } from './core/auth/auth.module'
 
 // const envFilePath: string = getEnvPath(`${__dirname}/common/envs`);
 // ignoreEnvFile: process.env.NODE_ENV === 'production',
@@ -30,7 +31,8 @@ import { CustomersModule } from './modules/customers/customers.module'
         connectionName: 'pos',
       }
     ),
-    CoreModule,
+    AuthModule,
+    // CoreModule,
     // TodoModule,
     // CustomersModule,
   ],
