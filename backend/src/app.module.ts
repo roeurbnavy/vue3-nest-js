@@ -31,7 +31,7 @@ import { CustomersModule } from './modules/customers/customers.module'
       }
     ),
     CoreModule,
-    TodoModule,
+    // TodoModule,
     // CustomersModule,
   ],
   controllers: [AppController],
