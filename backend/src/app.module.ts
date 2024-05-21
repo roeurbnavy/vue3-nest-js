@@ -32,8 +32,8 @@ import { UsersModule } from './core/users/users.module'
         connectionName: 'pos',
       }
     ),
-    // AuthModule,
-    UsersModule,
+    AuthModule,
+    // UsersModule,
     // CoreModule,
     // TodoModule,
     // CustomersModule,
