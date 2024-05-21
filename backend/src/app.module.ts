@@ -32,7 +32,7 @@ import { CustomersModule } from './modules/customers/customers.module'
     ),
     CoreModule,
     TodoModule,
-    CustomersModule,
+    // CustomersModule,
   ],
   controllers: [AppController],
   providers: [
