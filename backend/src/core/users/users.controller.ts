@@ -1,8 +1,8 @@
+import { Public } from './../../common/decorator/public.decorator'
 import { Roles } from './../../common/decorator/roles.decorator'
 import { AppRoles } from './../../common/enum/role.enum'
 import { UserUpdateDto } from './dto/update.dto'
 import { UsersService } from './users.service'
-import { Public } from 'src/common/decorator/public.decorator'
 
 import {
   Body,
