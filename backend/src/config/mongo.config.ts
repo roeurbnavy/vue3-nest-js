@@ -18,7 +18,7 @@ export const mongoAsyncConfig: MongooseModuleAsyncOptions = {
 
     if (ENV === 'production') {
       res = {
-        uri: config.get<string>('MONGO_URI'),
+        uri: config.get<string>('MONGODB_URI'),
       }
     }
     return res
