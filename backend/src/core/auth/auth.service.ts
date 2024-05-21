@@ -18,7 +18,7 @@ export class AuthService {
       const EXPIRES = this.config.get<string>('JWT_EXPIRES') ?? '30 days'
       const payload = {
         expiresIn: `${EXPIRES}`,
-        accessToken: this.jwtService.sign({ id: user._id }),
+        accessToken: this.jwtService.sign({ id: user._id, secret: 'secret' }),
         user,
       }
       console.log('payload', payload)
