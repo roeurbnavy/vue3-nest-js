@@ -7,7 +7,6 @@ import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core'
 import { ConfigModule } from '@nestjs/config'
 import { MongooseModule } from '@nestjs/mongoose'
 import { AppController } from './app.controller'
-import { mongoAsyncConfig } from './config/mongo.config'
 import { CustomersModule } from './modules/customers/customers.module'
 import { TodoModule } from './modules/todo/todo.module'
 
@@ -20,7 +19,13 @@ import { TodoModule } from './modules/todo/todo.module'
       // envFilePath,
       // isGlobal: true,
     }),
-    MongooseModule.forRootAsync(mongoAsyncConfig),
+    // MongooseModule.forRootAsync(mongoAsyncConfig),
+    MongooseModule.forRoot(
+      'mongodb+srv://root:AOiNIlgKQUBPGA41@pos-multi-company.mwod6ws.mongodb.net/nestDB?retryWrites=true&w=majority&appName=pos-multi-company',
+      {
+        connectionName: 'auth',
+      }
+    ),
     // connection to pos
     // mongodb://localhost:27017/leang_srun
     MongooseModule.forRoot(
