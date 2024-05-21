@@ -14,13 +14,14 @@ export const mongoAsyncConfig: MongooseModuleAsyncOptions = {
   ): Promise<MongooseModuleFactoryOptions> => {
     const ENV = process.env.NODE_ENV || 'development'
 
-    let res = { uri: config.get<string>('MONGODB_URI_DEV') }
+    let res = { uri: config.get<string>('MONGO_URI_DEV') }
 
     if (ENV === 'production') {
       res = {
-        uri: config.get<string>('MONGODB_URI'),
+        uri: config.get<string>('MONGO_URI'),
       }
     }
+
     return res
   },
 }
