@@ -19,17 +19,10 @@ import { CoreModule } from './core'
     ConfigModule.forRoot({
       // ignoreEnvFile: process.env.NODE_ENV === 'production',
       // envFilePath,
-      // isGlobal: true,
+      isGlobal: true,
     }),
     MongooseModule.forRootAsync(mongoAsyncConfig),
-    // MongooseModule.forRoot(
-    //   'mongodb+srv://root:AOiNIlgKQUBPGA41@pos-multi-company.mwod6ws.mongodb.net/nestDB?retryWrites=true&w=majority&appName=pos-multi-company',
-    //   {
-    //     connectionName: 'auth',
-    //   }
-    // ),
     // connection to pos
-    // mongodb://localhost:27017/leang_srun
     MongooseModule.forRoot(
       'mongodb+srv://root:AOiNIlgKQUBPGA41@pos-multi-company.mwod6ws.mongodb.net/multi_company?retryWrites=true&w=majority&appName=pos-multi-company',
       {
