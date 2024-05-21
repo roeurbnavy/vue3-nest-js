@@ -21,11 +21,11 @@ import { CustomersModule } from './modules/customers/customers.module'
       // envFilePath,
       // isGlobal: true,
     }),
-    MongooseModule.forRootAsync(mongoAsyncConfig),
+    // MongooseModule.forRootAsync(mongoAsyncConfig),
     // connection to pos
-    // MongooseModule.forRoot('mongodb://localhost:27017/leang_srun', {
-    //   connectionName: 'pos',
-    // }),
+    MongooseModule.forRoot('mongodb://localhost:27017/leang_srun', {
+      connectionName: 'pos',
+    }),
     // CoreModule,
     // TodoModule,
     // CustomersModule,
