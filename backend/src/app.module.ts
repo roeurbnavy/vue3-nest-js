@@ -23,9 +23,13 @@ import { CustomersModule } from './modules/customers/customers.module'
     }),
     // MongooseModule.forRootAsync(mongoAsyncConfig),
     // connection to pos
-    MongooseModule.forRoot('mongodb://localhost:27017/leang_srun', {
-      connectionName: 'pos',
-    }),
+    // mongodb://localhost:27017/leang_srun
+    MongooseModule.forRoot(
+      'mongodb+srv://root:AOiNIlgKQUBPGA41@pos-multi-company.mwod6ws.mongodb.net/nestDB?retryWrites=true&w=majority&appName=pos-multi-company',
+      {
+        connectionName: 'pos',
+      }
+    ),
     // CoreModule,
     // TodoModule,
     // CustomersModule,
