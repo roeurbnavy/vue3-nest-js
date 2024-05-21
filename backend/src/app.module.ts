@@ -30,9 +30,9 @@ import { CustomersModule } from './modules/customers/customers.module'
         connectionName: 'pos',
       }
     ),
-    // CoreModule,
-    // TodoModule,
-    // CustomersModule,
+    CoreModule,
+    TodoModule,
+    CustomersModule,
   ],
   controllers: [AppController],
   providers: [
