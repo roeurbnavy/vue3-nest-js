@@ -31,7 +31,7 @@ import { CoreModule } from './core'
     // connection to pos
     // mongodb://localhost:27017/leang_srun
     MongooseModule.forRoot(
-      'mongodb+srv://root:AOiNIlgKQUBPGA41@pos-multi-company.mwod6ws.mongodb.net/nestDB?retryWrites=true&w=majority&appName=pos-multi-company',
+      'mongodb+srv://root:AOiNIlgKQUBPGA41@pos-multi-company.mwod6ws.mongodb.net/multi_company?retryWrites=true&w=majority&appName=pos-multi-company',
       {
         connectionName: 'pos',
       }
