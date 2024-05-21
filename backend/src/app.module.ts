@@ -38,7 +38,7 @@ import { mongoAsyncConfig } from './config/mongo.config'
     // UsersModule,
     // CoreModule,
     // TodoModule,
-    CustomersModule,
+    // CustomersModule,
   ],
   controllers: [AppController],
   providers: [
