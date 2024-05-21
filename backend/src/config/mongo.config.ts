@@ -26,7 +26,6 @@ export const mongoAsyncConfig: MongooseModuleAsyncOptions = {
       uri: 'mongodb+srv://root:AOiNIlgKQUBPGA41@pos-multi-company.mwod6ws.mongodb.net/nestDB?retryWrites=true&w=majority&appName=pos-multi-company',
     }
 
-    console.log('mongoAsyncConfig', res, ENV)
     return res
   },
 }
