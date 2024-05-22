@@ -20,7 +20,6 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
       context.getHandler(),
       context.getClass(),
     ])
-
     if (isPublic) {
       return true
     }
@@ -28,17 +27,17 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
     return super.canActivate(context)
   }
 
-  getRequest(context: ExecutionContext) {
+  getAuthenticateOptions(context: ExecutionContext) {
     const ctx = GqlExecutionContext.create(context)
     return ctx.getContext().req
   }
 
-  handleRequest(err, user, info) {
-    console.log('handleRequest', user)
-    if (err || !user) {
-      console.log('error', new UnauthorizedException())
-      throw err || new UnauthorizedException()
-    }
-    return user
-  }
+  // handleRequest(err, user, info) {
+  //   console.log('handleRequest', user)
+  //   if (err || !user) {
+  //     console.log('error', new UnauthorizedException())
+  //     throw err || new UnauthorizedException()
+  //   }
+  //   return user
+  // }
 }
