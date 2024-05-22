@@ -48,8 +48,11 @@ export class AuthController {
     return user
   }
 
-  @ApiBearerAuth()
+  // @ApiBearerAuth()
   @Get('currentUser')
+  @ApiResponse({ status: 201, description: 'Successful Login' })
+  @ApiResponse({ status: 400, description: 'Bad Request' })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
   async currentUser(@CurrentUser() user: any) {
     console.log('currentUser', user)
     // const res = await this.usersService.findUserById(user._id)
