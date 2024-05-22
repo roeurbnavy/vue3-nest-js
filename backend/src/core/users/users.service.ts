@@ -21,13 +21,13 @@ export class UsersService {
     private readonly userModel: Model<User>
   ) { }
 
-  async findUserById(id: string): Promise<User> {
+  async findUserById(id: string): Promise<any> {
     const user = await this.userModel.findOne({ _id: id }).lean()
     if (!user) {
       throw 'User not found!'
     }
-    // const { password, ...result } = user
-    return user
+    const { password, ...result } = user
+    return result
   }
 
   async getAll(): Promise<User[]> {

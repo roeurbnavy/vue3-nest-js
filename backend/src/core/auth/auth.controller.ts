@@ -1,4 +1,4 @@
-import { Public } from './../../common/decorator/public.decorator';
+import { Public } from './../../common/decorator/public.decorator'
 import { RegisterDto } from './dto/register.dto'
 import { LoginDto } from './dto/login.dto'
 import { UsersService } from '../users/users.service'
@@ -50,7 +50,10 @@ export class AuthController {
 
   @ApiBearerAuth()
   @Get('currentUser')
-  currentUser(@CurrentUser() user: any) {
-    return this.usersService.findUserById(user._id)
+  async currentUser(@CurrentUser() user: any) {
+    console.log('currentUser', user)
+    // const res = await this.usersService.findUserById(user._id)
+    // console.log('res', res)
+    return user
   }
 }
