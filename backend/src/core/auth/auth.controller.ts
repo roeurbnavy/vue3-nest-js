@@ -48,7 +48,7 @@ export class AuthController {
     return user
   }
 
-  // @ApiBearerAuth()
+  @ApiBearerAuth()
   @Get('currentUser')
   @ApiResponse({ status: 201, description: 'Successful Login' })
   @ApiResponse({ status: 400, description: 'Bad Request' })
