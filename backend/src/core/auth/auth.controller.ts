@@ -4,7 +4,6 @@ import { LoginDto } from './dto/login.dto'
 import { UsersService } from '../users/users.service'
 import { AuthService } from './auth.service'
 
-
 import { ChangePasswordDto } from './dto/changePassword.dto'
 import { CurrentUser } from '../../common/decorator/currentUser.decorator'
 import { Body, Controller, Get, Param, Post } from '@nestjs/common'
@@ -54,7 +53,6 @@ export class AuthController {
   @ApiResponse({ status: 400, description: 'Bad Request' })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   async currentUser(@CurrentUser() user: any) {
-    console.log('currentUser', user)
     // const res = await this.usersService.findUserById(user._id)
     // console.log('res', res)
     return user

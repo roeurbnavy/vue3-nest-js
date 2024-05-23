@@ -35,6 +35,7 @@ import {
 } from "element-plus";
 import { computed, onMounted, ref } from "vue";
 import { useAuthStore } from "../stores";
+import { url } from "../lib/url";
 
 const authStore = useAuthStore();
 const data = ref([]);
@@ -69,7 +70,7 @@ const getCustomers = () => {
   data.value = [];
   axios({
     method: "GET",
-    url: `http://127.0.0.1:8080/customers/getAll`,
+    url: `${url}/customers/getAll`,
     params: {
       limit: form.value.limit,
     },

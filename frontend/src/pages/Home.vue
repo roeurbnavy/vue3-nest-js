@@ -64,6 +64,7 @@
 </template>
 
 <script setup lang="ts">
+import { url } from "../lib/url";
 import { computed, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import axios from "axios";
@@ -98,7 +99,7 @@ const getTodoList = () => {
 
   axios({
     method: "GET",
-    url: `http://127.0.0.1:8080/todo/findByUser`,
+    url: `${url}/todo/findByUser`,
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Content-type": "application/json",
@@ -132,7 +133,7 @@ const addTodo = () => {
 
       axios({
         method: "POST",
-        url: "http://127.0.0.1:8080/todo/create",
+        url: `${url}/todo/create`,
         data: {
           title: form.value.task,
         },
@@ -174,7 +175,7 @@ const addTodo = () => {
 const deleteTodo = (_id: string) => {
   axios({
     method: "DELETE",
-    url: "http://127.0.0.1:8080/todo/deleteById",
+    url: `${url}/todo/deleteById`,
     params: {
       id: _id,
     },

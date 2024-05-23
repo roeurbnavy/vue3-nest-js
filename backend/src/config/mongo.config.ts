@@ -12,8 +12,8 @@ export const mongoAsyncConfig: MongooseModuleAsyncOptions = {
   useFactory: async (
     config: ConfigService
   ): Promise<MongooseModuleFactoryOptions> => {
-    const ENV = process.env.NODE_ENV || 'development'
-
+    // const ENV = process.env.NODE_ENV || 'development'
+    // console.log('env', ENV)
     // let res = { uri: config.get<string>('MONGO_URI_DEV') }
 
     // if (ENV === 'production') {
@@ -23,7 +23,7 @@ export const mongoAsyncConfig: MongooseModuleAsyncOptions = {
     // }
 
     const res = {
-      uri: 'mongodb+srv://root:AOiNIlgKQUBPGA41@pos-multi-company.mwod6ws.mongodb.net/nestDB?retryWrites=true&w=majority&appName=pos-multi-company',
+      uri: config.get<string>('MONGO_URI'),
     }
 
     return res

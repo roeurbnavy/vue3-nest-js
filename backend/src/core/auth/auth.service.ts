@@ -27,7 +27,7 @@ export class AuthService {
         ),
         user,
       }
-      console.log('payload', payload)
+
       return payload
     } catch (error) {
       console.log('error', error)

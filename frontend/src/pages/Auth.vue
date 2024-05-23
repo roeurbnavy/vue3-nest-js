@@ -55,6 +55,7 @@ import axios, { AxiosError } from "axios";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "../stores";
 import { ElMessage, FormRules, FormInstance } from "element-plus";
+import { url } from "../lib/url";
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -100,7 +101,7 @@ const register = () => {
       const { username, password } = registerForm.value;
       axios({
         method: "POST",
-        url: "http://127.0.0.1:8080/auth/register",
+        url: `${url}/auth/register`,
         data: {
           username: username,
           password: password,
@@ -143,7 +144,7 @@ const login = () => {
       const { username, password } = loginForm.value;
       axios({
         method: "POST",
-        url: "http://127.0.0.1:8080/auth/login",
+        url: `${url}/auth/login`,
         data: {
           username: username,
           password: password,

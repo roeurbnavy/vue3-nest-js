@@ -1,16 +1,25 @@
-version: "3.8"
+version: '3.8'
+
 services:
-  db:
-    image: postgres:14
-    restart: always
-    container_name: chom_nay_backend
-    environment:
-      - POSTGRES_DB=nest
-      - POSTGRES_USER=nest
-      - POSTGRES_PASSWORD=nest
+  nest:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nest_app
     ports:
-      - 5432:5432
-    volumes:
-      - postgresdata:/var/lib/postgresql/data
-volumes:
-  postgresdata:
+      - 3000:8080
+
+  # nginx:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile-nginx
+  #   container_name: nest_nginx
+  #   depends_on:
+  #     - nest
+  #   environment:
+  #     - NGINX_SERVER_NAME=localhost
+  #     - NGINX_HOST=nest
+  #     - NEST_PORT=3000
+  #     - NGINX_MAX_BODY=100M
+  #   ports:
+  #     - 80:80

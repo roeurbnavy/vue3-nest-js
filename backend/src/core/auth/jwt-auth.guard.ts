@@ -32,12 +32,10 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
     return ctx.getContext().req
   }
 
-  // handleRequest(err, user, info) {
-  //   console.log('handleRequest', user)
-  //   if (err || !user) {
-  //     console.log('error', new UnauthorizedException())
-  //     throw err || new UnauthorizedException()
-  //   }
-  //   return user
-  // }
+  handleRequest(err, user) {
+    if (err || !user) {
+      throw err || new UnauthorizedException()
+    }
+    return user
+  }
 }
